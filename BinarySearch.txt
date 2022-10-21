@@ -1,0 +1,20 @@
+def binarySearch(item, list):
+    low = 0
+    high = len(list)-1
+
+    while low <= high:
+       # mid = (low + high)//2
+        mid = len(list)//2
+        if item == list[mid]:
+            # python's f-string introduced in python 3.x.x
+            return mid
+        elif item < list[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return None
+
+
+result = binarySearch(8, [1, 2, 3, 4, 5, 6, 7, 7.2, 7.5, 8, 9])
+print(f'Item is at index - {result}')
